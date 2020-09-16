@@ -31,7 +31,7 @@ for idx,row in df.iterrows():
     mc.add_child(folium.Marker([row['Lat'],row['Long']]))
 m.add_child(mc)
 
-        #####  map the district with the highest crime  ####
+        ####  map the district with the highest crime  ####
 crime=df.groupby(['DISTRICT','STREET','REPORTING_AREA','Lat','Long']).sum().reset_index()
 
 crime.update(crime['DISTRICT'].map('districts:{}'.format))
